@@ -11,12 +11,13 @@ https://coolors.co/3d5a80-98c1d9-e0fbfc-ee6c4d-293241
   display: flex;
   flex-direction: column;
   height: 100%;
+  font-family: "Open Sans", Arial, sans-serif;
 }
 
 .menu-bar {
   display: flex;
-  background-color: beige;
-  height: 100px;
+  background-color: #ee6c4dff;
+  height: 75px;
 }
 
 .name-left {
@@ -26,6 +27,10 @@ https://coolors.co/3d5a80-98c1d9-e0fbfc-ee6c4d-293241
   width: 50%;
 }
 
+.name {
+  margin-left: 5%;
+}
+
 .row-right {
   display: flex;
   justify-content: flex-end;
@@ -33,8 +38,46 @@ https://coolors.co/3d5a80-98c1d9-e0fbfc-ee6c4d-293241
   width: 50%;
 }
 
-.body {
+.tab {
+  margin-right: 5%;
+}
+
+.pages {
+  height: 100%;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.home {
+  background-color: #98c1d9ff;
+  height: 100%;
+}
+
+.welcome-info {
   display: flex;
-  background-color: aliceblue;
-  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+}
+
+div img {
+  margin-top: 5%;
+  display: block;
+  max-width: 215px;
+  max-height: 233px;
+  border-radius: 50%;
+  border-color: white;
+  border-style: solid;
+  border-width: medium;
+}
+
+.about {
+
+}
+
+.resume {
+
+}
+
+.contact {
+
 }
