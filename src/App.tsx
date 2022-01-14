@@ -1,16 +1,20 @@
 import { useEffect, useState } from 'react';
 import WebFont from 'webfontloader';
-import { Link, animateScroll as scroll } from 'react-scroll'
+import { Link, animateScroll as scroll } from 'react-scroll';
+import { Document, Page, pdfjs } from 'react-pdf';
 
 import './App.css';
 import headshot from './cropped_headshot_small.jpg';
 import upArrow from './up_arrow.svg'
+import myResume from './Vogel_Resume_2021.pdf'
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 WebFont.load({
   google: {
     families: ['Open Sans']
   }
-})
+});
 
 function App() {
   const sections = ["Home", "About", "Resume", "Contact"]
@@ -67,12 +71,16 @@ function App() {
 
         <div id="resume">
           <h2>Resume</h2>
+          <Document file={myResume}>
+            <Page pageNumber={1} />
+          </Document>
         </div>
 
         <div id="contact">
           <h2>Contact Me</h2>
         </div>
       </div>
+      
       {
         showButton &&
         <div className="arrow-button" onClick={scroll.scrollToTop}>
