@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.d93571aa.css",
-    "main.js": "/static/js/main.b8d50ae5.js",
+    "main.css": "/static/css/main.13b994f2.css",
+    "main.js": "/static/js/main.a4ea9826.js",
     "static/js/787.86d86599.chunk.js": "/static/js/787.86d86599.chunk.js",
+    "static/media/Vogel_Resume_2021.pdf": "/static/media/Vogel_Resume_2021.956025606a407b31e03d.pdf",
     "static/media/cropped_headshot_small.jpg": "/static/media/cropped_headshot_small.9d1ddfe2687b380c6ba2.jpg",
     "static/media/up_arrow.svg": "/static/media/up_arrow.82cadaee7d5e2b3f016f4a023b908c2d.svg",
     "index.html": "/index.html",
-    "main.d93571aa.css.map": "/static/css/main.d93571aa.css.map",
-    "main.b8d50ae5.js.map": "/static/js/main.b8d50ae5.js.map",
+    "main.13b994f2.css.map": "/static/css/main.13b994f2.css.map",
+    "main.a4ea9826.js.map": "/static/js/main.a4ea9826.js.map",
     "787.86d86599.chunk.js.map": "/static/js/787.86d86599.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d93571aa.css",
-    "static/js/main.b8d50ae5.js"
+    "static/css/main.13b994f2.css",
+    "static/js/main.a4ea9826.js"
   ]
 }
