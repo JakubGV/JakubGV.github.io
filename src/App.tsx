@@ -1,9 +1,10 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import WebFont from 'webfontloader';
-import {Link} from 'react-scroll'
+import { Link, animateScroll as scroll } from 'react-scroll'
 
 import './App.css';
 import headshot from './cropped_headshot_small.jpg';
+import upArrow from './up_arrow.svg'
 
 WebFont.load({
   google: {
@@ -15,7 +16,18 @@ function App() {
   const sections = ["Home", "About", "Resume", "Contact"]
   const image_caption = "ECE Student at Rutgers University";
   const about_me = "I am a senior electrical and computer engineering student at Rutgers University as a member of the Honors College. I am pursuing a minor in business administration to integrate business and engineering principles and lead an engaging, challenging career as an engineer.";
-  //let about_me = "text"
+
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect( () => {
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > 100) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    });
+  }, []);
 
   return (
     <div className="main">
@@ -43,7 +55,7 @@ function App() {
       <div className="pages">
         <div className="home">
           <div className="welcome-info">
-            <img src={headshot} alt="Headshot"/>
+            <img className="headshot" src={headshot} alt="Headshot"/>
             <div className="caption">{image_caption}</div>
           </div>
         </div>
@@ -61,6 +73,12 @@ function App() {
           <h2>Contact Me</h2>
         </div>
       </div>
+      {
+        showButton &&
+        <div className="arrow-button" onClick={scroll.scrollToTop}>
+          <img className="arrow" src={upArrow} alt="Up arrow"/>
+        </div>
+      }
     </div>
   );
 }
