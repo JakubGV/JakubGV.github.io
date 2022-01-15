@@ -1,12 +1,3 @@
-/*
-https://coolors.co/3d5a80-98c1d9-e0fbfc-ee6c4d-293241
---bdazzled-blue: #3d5a80ff;
---pale-cerulean: #98c1d9ff;
---light-cyan: #e0fbfcff;
---burnt-sienna: #ee6c4dff;
---gunmetal: #293241ff;
-*/
-
 .main {
   display: flex;
   flex-direction: column;
@@ -16,8 +7,14 @@ https://coolors.co/3d5a80-98c1d9-e0fbfc-ee6c4d-293241
 
 .menu-bar {
   display: flex;
-  background-color: #ee6c4dff;
   height: 75px;
+  background-color: rgb(238, 238, 238);
+  border-style: solid;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
 }
 
 .name-left {
@@ -84,7 +81,7 @@ https://coolors.co/3d5a80-98c1d9-e0fbfc-ee6c4d-293241
 }
 
 #about {
-  height: 200px;
+  height: 400px;
 }
 
 .about-text {
@@ -95,8 +92,9 @@ https://coolors.co/3d5a80-98c1d9-e0fbfc-ee6c4d-293241
 }
 
 #resume {
-  height: 840px;
+  height: 1250px;
 }
+
 
 #contact {
   

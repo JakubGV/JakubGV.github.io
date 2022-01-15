@@ -21,6 +21,11 @@ function App() {
   const image_caption = "ECE Student at Rutgers University";
   const about_me = "I am a senior electrical and computer engineering student at Rutgers University as a member of the Honors College. I am pursuing a minor in business administration to integrate business and engineering principles and lead an engaging, challenging career as an engineer.";
 
+  const documentStyle = {
+    width: '75%',
+    height: 'auto'
+  }
+  
   const [showButton, setShowButton] = useState(false);
 
   useEffect( () => {
@@ -65,14 +70,14 @@ function App() {
         </div>
 
         <div id="about">
-          <h2 className="about-header">About Me</h2>
-          <div className="about-text">{about_me}</div>
+            <h2 className="about-header">About Me</h2>
+            <div className="about-text">{about_me}</div>
         </div>
 
         <div id="resume">
           <h2>Resume</h2>
-          <Document file={myResume}>
-            <Page pageNumber={1} />
+          <Document file={myResume} >
+            <Page pageNumber={1} scale={1.5} />
           </Document>
         </div>
 
