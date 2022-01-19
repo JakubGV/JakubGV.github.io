@@ -1,0 +1,48 @@
+.input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.text-input, .box-input {
+  font-family: inherit;
+  font-size: inherit;
+  width: 50%;
+  box-sizing: border-box;
+  padding: .25em;
+  margin-bottom: 1em;
+  border-style: solid;
+  border-width: medium;
+  background-color: rgb(238, 238, 238);
+}
+
+.text-input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.text-input:focus, .box-input:focus {
+  outline: none;
+  transform: scale(1.04);
+}
+
+textarea {
+  resize: none;
+  height: 120px;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  margin-bottom: 1em;
+  border-style: solid;
+  border-width: medium;
+  border-radius: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+button:hover {
+  background-color:rgb(225, 225, 225)
+}

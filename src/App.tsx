@@ -5,13 +5,14 @@ import { Link, animateScroll as scroll } from 'react-scroll';
 import { Document, Page, pdfjs } from 'react-pdf';
 
 import { TypingText } from './TypingText'
+import { ContactForm } from './ContactForm'
 
-import headshot from './cropped_headshot_small.jpg';
-import upArrow from './up_arrow.svg'
-import liIcon from './linkedin.png'
-import githubIcon from './GitHub-32px.png'
+import headshot from './media/cropped_headshot_small.jpg';
+import upArrow from './media/up_arrow.svg'
+import liIcon from './media/linkedin.png'
+import githubIcon from './media/GitHub-32px.png'
 
-import myResume from './Vogel_Resume_2021.pdf'
+import myResume from './media/Vogel_Resume_2021.pdf'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
@@ -89,6 +90,7 @@ function App() {
 
         <div id="contact">
           <h2>Contact Me</h2>
+          <ContactForm />
           <div className="line">Jakub Vogel</div>
           <div className="line">jakub.vogel@rutgers.edu</div>
           <div className="line">(908) 210-6270</div>
