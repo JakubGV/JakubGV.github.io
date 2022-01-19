@@ -1,11 +1,16 @@
 import { useEffect, useState } from 'react';
+import './App.css';
 import WebFont from 'webfontloader';
 import { Link, animateScroll as scroll } from 'react-scroll';
 import { Document, Page, pdfjs } from 'react-pdf';
 
-import './App.css';
+import { TypingText } from './TypingText'
+
 import headshot from './cropped_headshot_small.jpg';
 import upArrow from './up_arrow.svg'
+import liIcon from './linkedin.png'
+import githubIcon from './GitHub-32px.png'
+
 import myResume from './Vogel_Resume_2021.pdf'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
@@ -20,11 +25,8 @@ function App() {
   const sections = ["Home", "About", "Resume", "Contact"]
   const image_caption = "ECE Student at Rutgers University";
   const about_me = "I am a senior electrical and computer engineering student at Rutgers University as a member of the Honors College. I am pursuing a minor in business administration to integrate business and engineering principles and lead an engaging, challenging career as an engineer.";
-
-  const documentStyle = {
-    width: '75%',
-    height: 'auto'
-  }
+  
+  const rotatingWords = ['solve problems.', 'build solutions.', 'learn new things.']
   
   const [showButton, setShowButton] = useState(false);
 
@@ -47,11 +49,11 @@ function App() {
         <div className="row-right">
           {
             sections.map( (tabName: string) => {
-              const toString = tabName.toLowerCase();
+              const divLinkName = tabName.toLowerCase();
               
               return (
                 <div className="tab">
-                  <Link to={toString} smooth={true}>
+                  <Link to={divLinkName} smooth={true}>
                     {tabName}
                   </Link>
                 </div>
@@ -66,11 +68,15 @@ function App() {
           <div className="welcome-info">
             <img className="headshot" src={headshot} alt="Headshot"/>
             <div className="caption">{image_caption}</div>
+            <div className="caption caption-main">
+              <span>I like to</span>
+              <TypingText textOptions={rotatingWords}/>
+            </div>
           </div>
         </div>
 
         <div id="about">
-            <h2 className="about-header">About Me</h2>
+            <h2 className="about-header">About</h2>
             <div className="about-text">{about_me}</div>
         </div>
 
@@ -83,6 +89,17 @@ function App() {
 
         <div id="contact">
           <h2>Contact Me</h2>
+          <div className="line">Jakub Vogel</div>
+          <div className="line">jakub.vogel@rutgers.edu</div>
+          <div className="line">(908) 210-6270</div>
+          <div className="icons">
+            <a href="https://www.linkedin.com/in/jakub-vogel" target="_blank" rel="noreferrer">
+              <img className="li-icon" src={liIcon} alt="Linked-in icon" />
+            </a>
+            <a href="https://github.com/JakubGV" target="_blank" rel="noreferrer">
+              <img className="github-icon" src={githubIcon} alt="GitHub icon" />
+            </a>
+          </div>
         </div>
       </div>
       

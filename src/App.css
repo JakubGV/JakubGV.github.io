@@ -3,6 +3,7 @@
   flex-direction: column;
   height: 100%;
   font-family: "Open Sans", Arial, sans-serif;
+  font-size: 16px;
 }
 
 .menu-bar {
@@ -60,6 +61,7 @@
 
 .headshot {
   margin-top: 5%;
+  margin-bottom: 10px;
   display: block;
   max-width: 215px;
   max-height: 233px;
@@ -70,7 +72,14 @@
 }
 
 .caption {
-  margin-top: 1%;
+  padding-bottom: 0.5em;
+}
+
+.caption-main {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #about, #resume, #contact {
@@ -81,7 +90,7 @@
 }
 
 #about {
-  height: 400px;
+  background-color: rgb(238, 238, 238);
 }
 
 .about-text {
@@ -89,15 +98,31 @@
   margin-left: 20%;
   margin-right: 20%;
   text-indent: 2em;
+  padding-bottom: 2em;
 }
 
 #resume {
-  height: 1250px;
+  height: 1325px;
+  background-color: #98c1d9ff;
 }
 
 
 #contact {
-  
+  background-color: rgb(238, 238, 238);
+  padding-bottom: 1em;
+}
+
+.line {
+  padding-bottom: 1em;
+}
+
+.li-icon {
+  height: 32px;
+  margin-right: 5px;
+}
+
+.github-icon {
+  margin-left: 5px;
 }
 
 .arrow-button {
