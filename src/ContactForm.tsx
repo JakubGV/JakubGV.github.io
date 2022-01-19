@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Circles } from 'react-loader-spinner';
 import './ContactForm.css';
 
 type ContactFormProps = {
@@ -6,7 +7,9 @@ type ContactFormProps = {
 }
 
 type ContactFormState = {
-  form: ContactRequest
+  form: ContactRequest,
+  valid: FormValidity,
+  loading: boolean
 }
 
 type ContactRequest = {
@@ -15,13 +18,25 @@ type ContactRequest = {
   message: string
 }
 
+type FormValidity = {
+  nameValid: boolean,
+  emailValid: boolean,
+  messageValid: boolean
+}
+
 export class ContactForm extends Component <ContactFormProps, ContactFormState> {
   state = {
     form: {
       name: '',
       email: '',
       message: ''
-    }
+    },
+    valid: {
+      nameValid: true,
+      emailValid: true,
+      messageValid: true
+    },
+    loading: false
   }
 
   handleTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -48,8 +63,78 @@ export class ContactForm extends Component <ContactFormProps, ContactFormState> 
     });
   }
 
+  validateForm = () => {
+    const name = this.state.form.name;
+    const email = this.state.form.email;
+    const message = this.state.form.message;
+    let validUpdate: FormValidity = this.state.valid;
+
+    if (name.length === 0) {
+      validUpdate['nameValid'] = false;
+    }
+    else {
+      validUpdate['nameValid'] = true;
+    }
+
+    if (email.length === 0 || !(email.includes('@'))) {
+      validUpdate['emailValid'] = false;
+    }
+    else {
+      validUpdate['emailValid'] = true;
+    }
+
+    if (message.length === 0) {
+      validUpdate['messageValid'] = false;
+    }
+    else {
+      validUpdate['messageValid'] = true;
+    }
+
+    this.setState({
+      valid: validUpdate
+    })
+  }
+
+  send = async () => {
+    const url = 'https://script.google.com/macros/s/AKfycbymrCeLLpRrV0zuLRlbjDWQKqcTr8KaYK_GsWly_h_MQcIvEQOnBS0yMtzJrrAhVlSn8A/exec';
+    const method = 'POST';
+
+    let data = new FormData();
+    for (const [key, value] of Object.entries(this.state.form)) {
+      data.append(key, value);
+    }
+
+    fetch(url, {
+      method,
+      body: data
+    })
+    .then(() => {
+      alert('Message sent!');
+      this.setState({
+        loading: false
+      })
+    })
+    .catch(e => {
+      alert('Something went wrong');
+      this.setState({
+        loading: false
+      })
+      console.log(e);
+    })
+  }
+
   handleSubmit = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    alert(JSON.stringify(this.state.form))
+    this.validateForm();
+
+    if (!this.state.valid.nameValid || !this.state.valid.emailValid || !this.state.valid.messageValid) {
+      return;
+    }
+    else {
+      this.setState({
+        loading: true
+      })
+      this.send();
+    }
   }
   
   render() {
@@ -75,9 +160,25 @@ export class ContactForm extends Component <ContactFormProps, ContactFormState> 
           name="message"
           value={this.state.form.message}
           onChange={this.handleTextAreaChange} />
-
+        
         <div className="submit">
+          {
+            !this.state.valid.nameValid &&
+            <div className="error">Please enter your name</div>
+          }
+          {
+            !this.state.valid.emailValid &&
+            <div className="error">Please enter an email or include the '@' symbol</div>
+          }
+          {
+            !this.state.valid.messageValid &&
+            <div className="error">Please enter a message</div>
+          }
           <button onClick={this.handleSubmit}>Send!</button>
+          {
+            this.state.loading &&
+            <Circles height="25" width="25" color="#98c1d9ff"/>
+          }
         </div>
       </>
     )

@@ -91,6 +91,7 @@ function App() {
         <div id="contact">
           <h2>Contact Me</h2>
           <ContactForm />
+          <br />
           <div className="line">Jakub Vogel</div>
           <div className="line">jakub.vogel@rutgers.edu</div>
           <div className="line">(908) 210-6270</div>
