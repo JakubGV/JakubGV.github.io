@@ -1,0 +1,35 @@
+.menu-bar {
+  display: flex;
+  height: 75px;
+  background-color: rgb(238, 238, 238);
+  border-style: solid;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+
+.name-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+}
+
+.name {
+  margin-left: 5%;
+}
+
+.row-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
+}
+
+.tab {
+  margin-right: 5%;
+}
+
+.tab:hover {
+  cursor: pointer;
+}

@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import WebFont from 'webfontloader';
-import { Link, animateScroll as scroll } from 'react-scroll';
+import { animateScroll as scroll } from 'react-scroll';
 import { Document, Page, pdfjs } from 'react-pdf';
 
 import { TypingText } from './TypingText'
 import { ContactForm } from './ContactForm'
+import { MenuBar } from './MenuBar'
 
 import headshot from './media/cropped_headshot_small.jpg';
 import upArrow from './media/up_arrow.svg'
@@ -43,26 +44,7 @@ function App() {
 
   return (
     <div className="main">
-      <div className="menu-bar">
-        <div className="name-left">
-          <h1 className="name">Jakub Vogel</h1>
-        </div>
-        <div className="row-right">
-          {
-            sections.map( (tabName: string) => {
-              const divLinkName = tabName.toLowerCase();
-              
-              return (
-                <div className="tab">
-                  <Link to={divLinkName} smooth={true}>
-                    {tabName}
-                  </Link>
-                </div>
-              )
-            })
-          }
-        </div>
-      </div>
+      <MenuBar header="Jakub Vogel" sections={sections}/>
 
       <div className="pages">
         <div className="home">
