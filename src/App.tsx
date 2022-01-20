@@ -2,20 +2,16 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import WebFont from 'webfontloader';
 import { animateScroll as scroll } from 'react-scroll';
-import { Document, Page, pdfjs } from 'react-pdf';
 
-import { TypingText } from './TypingText'
-import { ContactForm } from './ContactForm'
-import { MenuBar } from './MenuBar'
+import { TypingText } from './TypingText';
+import { ContactForm } from './ContactForm';
+import { MenuBar } from './MenuBar';
+import { ResumePreview } from './ResumePreview';
 
 import headshot from './media/cropped_headshot_small.jpg';
-import upArrow from './media/up_arrow.svg'
-import liIcon from './media/linkedin.png'
-import githubIcon from './media/GitHub-32px.png'
-
-import myResume from './media/Vogel_Resume_2021.pdf'
-
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+import upArrow from './media/up_arrow.svg';
+import liIcon from './media/linkedin.png';
+import githubIcon from './media/GitHub-32px.png';
 
 WebFont.load({
   google: {
@@ -24,9 +20,24 @@ WebFont.load({
 });
 
 function App() {
-  const sections = ["Home", "About", "Resume", "Contact"]
-  const image_caption = "ECE Student at Rutgers University";
-  const about_me = "I am a senior electrical and computer engineering student at Rutgers University as a member of the Honors College. I am pursuing a minor in business administration to integrate business and engineering principles and lead an engaging, challenging career as an engineer.";
+  const sections = ['Home', 'About', 'Resume', 'Contact'];
+  const image_caption = 'ECE Student at Rutgers University';
+  const about_me = 'I am a senior electrical and computer engineering student at Rutgers University as a member of the Honors College. I am pursuing a minor in business administration to integrate business and engineering principles and lead an engaging, challenging career as an engineer.';
+  
+  const resume_link = 'https://drive.google.com/file/d/1SdDAy_aMrn-uYSr-kKWk2YtpEbBrEp8a/view?usp=sharing';
+  const preview = [{
+      company: 'Journal of Young Investigators',
+      jobTitle: 'Software Developer',
+      bullets: ['Create lightweight and extensible React applications that fetch job posting data from an API and display them for editing to improve upon the existing process for managing job applications at the journal for the executive board.',
+                'Work alongside the CTO to develop new features and functionality for the Journal of Young Investigators website']
+    }, {
+      company: 'General Motors',
+      jobTitle: 'Automation Engineer',
+      bullets: ['Spearheaded the implementation of a cross-functional, customizable manufacturing execution system (MES) for the General Motors Lockport plant which tracks thousands of components daily across 3 different processes.',
+                'Designed and created 3 customizable reports using Microsoft Power BI and SQL Server Reporting Services (SSRS) utilizing the data gathered by the MES system to provide insight into the operational efficiency of various machines for plant managers.',
+                'Programmed 3 heat treat furnaces to collect key performance indicators and send them to the plant\'s database to give the Senior Controls Engineer more visibility into the process and allow for proactive maintenance.']
+    }
+  ]
   
   const rotatingWords = ['solve problems.', 'build solutions.', 'learn new things.']
   
@@ -65,9 +76,7 @@ function App() {
 
         <div id="resume">
           <h2>Resume</h2>
-          <Document file={myResume} >
-            <Page pageNumber={1} scale={1.5} />
-          </Document>
+          <ResumePreview resumeLink={resume_link} preview={preview}/>
         </div>
 
         <div id="contact">
