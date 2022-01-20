@@ -1,6 +1,7 @@
 .menu-bar {
   display: flex;
-  height: 75px;
+  flex-direction: column;
+  height: 125px;
   background-color: rgb(238, 238, 238);
   border-style: solid;
   border-left: none;
@@ -9,27 +10,52 @@
 }
 
 .name-left {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 50%;
+  width: 100%;
 }
 
 .name {
-  margin-left: 5%;
+  text-align: center;
 }
 
 .row-right {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 50%;
+  justify-content: space-evenly;
+  width: 100%; 
 }
 
 .tab {
-  margin-right: 5%;
+  margin-bottom: 1em;
 }
 
 .tab:hover {
   cursor: pointer;
+}
+
+@media screen and (min-width: 600px) {
+  .menu-bar {
+    flex-direction: row;
+    height: 75px;
+  }
+  
+  .name-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+  }
+  
+  .name {
+    margin-left: 1em;
+  }
+  
+  .row-right {
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+  }
+  
+  .tab {
+    margin-right: 5%;
+    margin-bottom: 0em;
+  }
 }

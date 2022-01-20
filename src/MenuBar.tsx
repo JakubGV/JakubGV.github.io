@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { Link } from 'react-scroll';
+import './MenuBar.css';
 
 type MenuBarProps = {
   sections: string[],
