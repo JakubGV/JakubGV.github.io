@@ -70,13 +70,17 @@ function App() {
         </div>
 
         <div id="about">
+          <div className="content-holder">
             <h2 className="about-header">About</h2>
             <div className="about-text">{about_me}</div>
+          </div>
         </div>
 
         <div id="resume">
-          <h2>Resume</h2>
-          <ResumePreview resumeLink={resume_link} preview={preview}/>
+          <div className="content-holder"> 
+            <h2>Resume</h2>
+            <ResumePreview resumeLink={resume_link} preview={preview}/>
+          </div>
         </div>
 
         <div id="contact">

@@ -7,13 +7,14 @@
 .text-input, .box-input {
   font-family: inherit;
   font-size: inherit;
-  width: 50%;
+  width: 75%;
   box-sizing: border-box;
   padding: .25em;
   margin-bottom: 1em;
   border-style: solid;
   border-width: medium;
   background-color: rgb(238, 238, 238);
+  max-width: 500px;
 }
 
 .text-input {
