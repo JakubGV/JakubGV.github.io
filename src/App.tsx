@@ -12,6 +12,8 @@ import headshot from './media/cropped_headshot_small.jpg';
 import upArrow from './media/up_arrow.svg';
 import liIcon from './media/linkedin.png';
 import githubIcon from './media/GitHub-32px.png';
+import email from './media/email.svg';
+import phone from './media/phone.svg';
 
 WebFont.load({
   google: {
@@ -22,6 +24,8 @@ WebFont.load({
 function App() {
   const sections = ['Home', 'About', 'Resume', 'Contact'];
   const image_caption = 'ECE Student at Rutgers University';
+  const rotatingWords = ['solve problems.', 'build solutions.', 'learn new things.'];
+  
   const about_me = 'I am a senior electrical and computer engineering student at Rutgers University as a member of the Honors College. I am pursuing a minor in business administration to integrate business and engineering principles and lead an engaging, challenging career as an engineer.';
   
   const resume_link = 'https://drive.google.com/file/d/1SdDAy_aMrn-uYSr-kKWk2YtpEbBrEp8a/view?usp=sharing';
@@ -37,9 +41,7 @@ function App() {
                 'Designed and created 3 customizable reports using Microsoft Power BI and SQL Server Reporting Services (SSRS) utilizing the data gathered by the MES system to provide insight into the operational efficiency of various machines for plant managers.',
                 'Programmed 3 heat treat furnaces to collect key performance indicators and send them to the plant\'s database to give the Senior Controls Engineer more visibility into the process and allow for proactive maintenance.']
     }
-  ]
-  
-  const rotatingWords = ['solve problems.', 'build solutions.', 'learn new things.']
+  ];
   
   const [showButton, setShowButton] = useState(false);
 
@@ -78,7 +80,7 @@ function App() {
 
         <div id="resume">
           <div className="content-holder"> 
-            <h2>Resume</h2>
+            <h2>Resume Highlights</h2>
             <ResumePreview resumeLink={resume_link} preview={preview}/>
           </div>
         </div>
@@ -88,8 +90,14 @@ function App() {
           <ContactForm />
           <br />
           <div className="line">Jakub Vogel</div>
-          <div className="line">jakub.vogel@rutgers.edu</div>
-          <div className="line">(908) 210-6270</div>
+          <div className="line">
+            <img className="email-icon" src={email} alt="Email" />
+            jakub.vogel@rutgers.edu
+          </div>
+          <div className="line">
+            <img className="phone-icon" src={phone} alt="Phone" />
+            (908) 210-6270
+          </div>
           <div className="icons">
             <a href="https://www.linkedin.com/in/jakub-vogel" target="_blank" rel="noreferrer">
               <img className="li-icon" src={liIcon} alt="Linked-in icon" />

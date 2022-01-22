@@ -82,7 +82,14 @@
 }
 
 .line {
+  display: flex;
   padding-bottom: 1em;
+  align-items: center;
+}
+
+.email-icon, .phone-icon {
+  height: 20px;
+  margin-right: 0.5em;
 }
 
 .li-icon {
