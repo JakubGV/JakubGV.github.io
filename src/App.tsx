@@ -1,5 +1,4 @@
 import './App.css';
-import WebFont from 'webfontloader';
 
 import { TypingText } from './TypingText';
 import { ContactForm } from './ContactForm';
@@ -13,13 +12,6 @@ import liIcon from './media/linkedin.png';
 import githubIcon from './media/GitHub-32px.png';
 import email from './media/email.svg';
 import phone from './media/phone.svg';
-
-
-WebFont.load({
-  google: {
-    families: ['Open Sans']
-  }
-});
 
 function App() {
   const sections = ['Home', 'About', 'Resume', 'Contact'];
@@ -82,19 +74,19 @@ function App() {
           <br />
           <div className="line">Jakub Vogel</div>
           <div className="line">
-            <img className="email-icon" src={email} alt="Email" />
+            <img className="email-icon" src={email} width="20" height="20" alt="Email" />
             jakub.vogel@rutgers.edu
           </div>
           <div className="line">
-            <img className="phone-icon" src={phone} alt="Phone" />
+            <img className="phone-icon" src={phone} width="20" height="20" alt="Phone" />
             (908) 210-6270
           </div>
           <div className="icons">
             <a href="https://www.linkedin.com/in/jakub-vogel" target="_blank" rel="noreferrer">
-              <img className="li-icon" src={liIcon} alt="Linked-in icon" />
+              <img className="li-icon" src={liIcon} width="37.63" height="32" alt="Linked-in icon" />
             </a>
             <a href="https://github.com/JakubGV" target="_blank" rel="noreferrer">
-              <img className="github-icon" src={githubIcon} alt="GitHub icon" />
+              <img className="github-icon" src={githubIcon} width="32" height="32" alt="GitHub icon" />
             </a>
           </div>
         </div>
