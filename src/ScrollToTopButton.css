@@ -1,0 +1,22 @@
+.arrow-button {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 35%;
+  background-color: #ee6c4dff;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.arrow-button[currently-visible="true"] {
+  display: block;
+}
+
+.arrow-button[currently-visible="false"] {
+  display: none;
+}

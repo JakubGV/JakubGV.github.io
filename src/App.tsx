@@ -1,20 +1,19 @@
-import { useEffect, useState } from 'react';
 import './App.css';
 import WebFont from 'webfontloader';
-import { animateScroll as scroll } from 'react-scroll';
 
 import { TypingText } from './TypingText';
 import { ContactForm } from './ContactForm';
 import { MenuBar } from './MenuBar';
 import { ResumePreview } from './ResumePreview';
 import { AboutContent } from './AboutContent';
+import { ScrollToTopButton } from './ScrollToTopButton';
 
 import headshot from './media/cropped_headshot_small.jpg';
-import upArrow from './media/up_arrow.svg';
 import liIcon from './media/linkedin.png';
 import githubIcon from './media/GitHub-32px.png';
 import email from './media/email.svg';
 import phone from './media/phone.svg';
+
 
 WebFont.load({
   google: {
@@ -46,19 +45,9 @@ function App() {
                 'Programmed 3 heat treat furnaces to collect key performance indicators and send them to the plant\'s database to give the Senior Controls Engineer more visibility into the process and allow for proactive maintenance.']
     }
   ];
+
+  const to_top_displacement = 300;
   
-  const [showButton, setShowButton] = useState(false);
-
-  useEffect( () => {
-    window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 100) {
-        setShowButton(true);
-      } else {
-        setShowButton(false);
-      }
-    });
-  }, []);
-
   return (
     <div className="main">
       <MenuBar header="Jakub Vogel" sections={sections}/>
@@ -111,12 +100,7 @@ function App() {
         </div>
       </div>
       
-      {
-        showButton &&
-        <div className="arrow-button" onClick={scroll.scrollToTop}>
-          <img className="arrow" src={upArrow} alt="Up arrow"/>
-        </div>
-      }
+      <ScrollToTopButton displacement={to_top_displacement} />
     </div>
   );
 }
