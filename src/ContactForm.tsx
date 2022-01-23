@@ -24,6 +24,10 @@ type FormValidity = {
   messageValid: boolean
 }
 
+/**
+ * Renders a ContactForm with fields name, email, and message and sends to a google script
+ * @returns 2 text `<input>`s, a `<textarea>`, and submission `<button>`
+ */
 export class ContactForm extends Component <ContactFormProps, ContactFormState> {
   state = {
     form: {

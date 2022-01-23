@@ -8,6 +8,12 @@ type ScrollToTopButtonProps = {
   displacement: number
 }
 
+/**
+ * Renders a button that smoothly scrolls to the top of the page
+ * @param props
+ * @param props.displacement The vertical distance that must be travelled until the button appears 
+ * @returns Clickable `<div>` with the image of an up arrow
+ */
 export const ScrollToTopButton: FunctionComponent <ScrollToTopButtonProps>  = (props) => {
   const [showButton, setShowButton] = useState('false');
 

@@ -9,6 +9,12 @@ type TypingTextState = {
   currrentText: string
 }
 
+/**
+ * Renders a carousel of text according to `props.textOptions` with a blinking cursor
+ * @param props
+ * @param props.textOptions Options for the component to type and delete
+ * @returns `<TypingText />` component
+ */
 export class TypingText extends Component <TypingTextProps, TypingTextState>  {
   state = {
     currrentText: ''

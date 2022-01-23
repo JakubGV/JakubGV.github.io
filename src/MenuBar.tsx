@@ -1,39 +1,40 @@
-import { Component } from 'react';
+import { FunctionComponent } from 'react';
 import { Link } from 'react-scroll';
 import './MenuBar.css';
 
 type MenuBarProps = {
-  sections: string[],
-  header: string
+  header: string,
+  sections: string[]
 }
 
-type MenuBarState = {
-
-}
-
-export class MenuBar extends Component <MenuBarProps, MenuBarState>  {
-  render() {
-    return (
-      <div className="menu-bar">
-        <div className="name-left">
-          <h1 className="name">{this.props.header}</h1>
-        </div>
-        <div className="row-right">
-          {
-            this.props.sections.map( (tabName: string) => {
-              const divLinkName = tabName.toLowerCase();
-              
-              return (
-                <div className="tab" key={divLinkName}>
-                  <Link to={divLinkName} smooth={true}>
-                    {tabName}
-                  </Link>
-                </div>
-              )
-            })
-          }
-        </div>
+/**
+ * Renders a MenuBar with the given `props.header` and `props.sections`
+ * @param props 
+ * @param props.header The header for the left or top of the page
+ * @param props.sections The sections of the page to create menu links for
+ * @returns `<MenuBar />` component
+ */
+export const MenuBar: FunctionComponent <MenuBarProps> = (props) => {
+  return (
+    <div className="menu-bar">
+      <div className="name-left">
+        <h1 className="name">{props.header}</h1>
       </div>
-    )
-  }
+      <div className="row-right">
+        {
+          props.sections.map( (tabName: string) => {
+            const divLinkName = tabName.toLowerCase();
+            
+            return (
+              <div className="tab" key={divLinkName}>
+                <Link to={divLinkName} smooth={true}>
+                  {tabName}
+                </Link>
+              </div>
+            )
+          })
+        }
+      </div>
+    </div>
+  )
 }
