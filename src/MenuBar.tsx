@@ -24,7 +24,7 @@ export class MenuBar extends Component <MenuBarProps, MenuBarState>  {
               const divLinkName = tabName.toLowerCase();
               
               return (
-                <div className="tab">
+                <div className="tab" key={divLinkName}>
                   <Link to={divLinkName} smooth={true}>
                     {tabName}
                   </Link>

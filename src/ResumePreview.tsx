@@ -25,8 +25,8 @@ const ListGenerator: FunctionComponent <ListGeneratorProps> = (props) => {
     <>
       <ul>
         {
-          props.bullets.map( (bullet: string) => {
-            return <li>{bullet}</li>
+          props.bullets.map( (bullet: string, index: number) => {
+            return <li key={index.toString()}>{bullet}</li>
           })
         }
       </ul>
@@ -40,9 +40,9 @@ export class ResumePreview extends Component <ResumePreviewProps, ResumePreviewS
       <div className="main-container">
         <div className="container">
         {
-          this.props.preview.map( (section: sectionToPreview) => {
+          this.props.preview.map( (section: sectionToPreview, index: number) => {
             return (
-              <div className="section">
+              <div className="section" key={index.toString()}>
                 <div className="header">
                   <h3>{section.company}</h3>
                   <h4>{section.jobTitle}</h4>
