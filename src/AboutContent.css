@@ -1,0 +1,29 @@
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+p {
+  text-indent: 1.5em;
+  margin-top: 0.5em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+@media screen and (min-width: 1024px) {
+  .text-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+  }
+
+  p {
+    width: 50%;
+    margin-left: 0em;
+    margin-right: 0em;
+  }
+}

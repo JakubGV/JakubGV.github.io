@@ -7,6 +7,7 @@ import { TypingText } from './TypingText';
 import { ContactForm } from './ContactForm';
 import { MenuBar } from './MenuBar';
 import { ResumePreview } from './ResumePreview';
+import { AboutContent } from './AboutContent';
 
 import headshot from './media/cropped_headshot_small.jpg';
 import upArrow from './media/up_arrow.svg';
@@ -26,10 +27,13 @@ function App() {
   const image_caption = 'ECE Student at Rutgers University';
   const rotatingWords = ['solve problems.', 'build solutions.', 'learn new things.'];
   
-  const about_me = 'I am a senior electrical and computer engineering student at Rutgers University as a member of the Honors College. I am pursuing a minor in business administration to integrate business and engineering principles and lead an engaging, challenging career as an engineer.';
+  const about = ['I\'m an aspiring software engineer. That means I like technology and writing code. But really? I have the opportunity to build and create solutions that can reach all types of people, all while learning new things every day.',
+                 'Currently, I am a senior electrical and computer engineering student at Rutgers University as a member of the Honors College. On top of that, I am pursuing a minor in business administration to better integrate business and engineering principles to lead an engaging, challenging career.',
+                 'As for this website, I can proudly say I built it from scratch. There is nothing but handmade HTML, CSS, JavaScript, and a little help from ReactJS. If you have any questions about how I made it or otherwise, don\'t hesitate to contact me below!',
+                ];
   
   const resume_link = 'https://drive.google.com/file/d/1SdDAy_aMrn-uYSr-kKWk2YtpEbBrEp8a/view?usp=sharing';
-  const preview = [{
+  const resume_preview = [{
       company: 'Journal of Young Investigators',
       jobTitle: 'Software Developer',
       bullets: ['Create lightweight and extensible React applications that fetch job posting data from an API and display them for editing to improve upon the existing process for managing job applications at the journal for the executive board.',
@@ -72,16 +76,14 @@ function App() {
         </div>
 
         <div id="about">
-          <div className="content-holder">
             <h2 className="about-header">About</h2>
-            <div className="about-text">{about_me}</div>
-          </div>
+            <AboutContent paragraphs={about} />
         </div>
 
         <div id="resume">
-          <div className="content-holder"> 
+          <div className="content-holder">
             <h2>Resume Highlights</h2>
-            <ResumePreview resumeLink={resume_link} preview={preview}/>
+            <ResumePreview resumeLink={resume_link} preview={resume_preview}/>
           </div>
         </div>
 
