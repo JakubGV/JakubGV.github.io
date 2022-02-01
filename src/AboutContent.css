@@ -22,8 +22,8 @@ p {
   }
 
   p {
-    width: 50%;
-    margin-left: 0em;
-    margin-right: 0em;
+    width: 49%;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
   }
 }
