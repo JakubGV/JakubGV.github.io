@@ -1,0 +1,52 @@
+.project-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+}
+
+.icon {
+  margin-bottom: 0.5em;
+}
+
+.p {
+  text-indent: 0em;
+  text-align: center;
+}
+
+.button {
+  font-family: inherit;
+  font-size: inherit;
+  margin-bottom: 1em;
+  border-style: solid;
+  border-width: medium;
+  border-radius: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.button:hover {
+  background-color:rgb(225, 225, 225);
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+  .project-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+  }
+
+  .project {
+    width: 50%;
+  }
+}

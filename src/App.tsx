@@ -5,16 +5,17 @@ import { ContactForm } from './ContactForm';
 import { MenuBar } from './MenuBar';
 import { ResumePreview } from './ResumePreview';
 import { AboutContent } from './AboutContent';
+import { Projects } from './Projects';
 import { ScrollToTopButton } from './ScrollToTopButton';
 
-import headshot from './media/cropped_headshot_small.jpg';
+import headshot from './media/cropped_headshot.jpg';
 import liIcon from './media/linkedin.png';
 import githubIcon from './media/GitHub-32px.png';
 import email from './media/email.svg';
 import phone from './media/phone.svg';
 
 function App() {
-  const sections = ['Home', 'About', 'Resume', 'Contact'];
+  const sections = ['Home', 'About', 'Projects', 'Resume', 'Contact'];
   const image_caption = 'ECE Student at Rutgers University';
   const rotatingWords = ['solve problems.', 'build solutions.', 'learn new things.'];
   
@@ -22,6 +23,24 @@ function App() {
                  'Currently, I am a senior electrical and computer engineering student at Rutgers University as a member of the Honors College. On top of that, I am pursuing a minor in business administration to better integrate business and engineering principles to lead an engaging, challenging career.',
                  'As for this website, I can proudly say I built it from scratch. There is nothing but handmade HTML, CSS, JavaScript, and a little help from ReactJS. If you have any questions about how I made it or otherwise, don\'t hesitate to contact me below!',
                 ];
+
+  const projects = [{
+      icon: headshot,
+      name: 'NYT Spelling Bee Solver',
+      link: 'www.google.com',
+      description: 'A solver for the NYT spelling bee.'
+    }, {
+      icon: githubIcon,
+      name: 'Test 2',
+      link: 'https://www.google.com',
+      description: 'Test description 2 that wraps around and is really long and just keeps going like a normal desce robably owuld and so this is more real'
+    }, {
+      icon: liIcon,
+      name: 'Test 3',
+      link: '',
+      description: 'Testing 3 things'
+    }
+  ];
   
   const resume_link = 'https://drive.google.com/file/d/1SdDAy_aMrn-uYSr-kKWk2YtpEbBrEp8a/view?usp=sharing';
   const resume_preview = [{
@@ -47,7 +66,7 @@ function App() {
       <div className="pages">
         <div className="home">
           <div className="welcome-info">
-            <img className="headshot" src={headshot} alt="Headshot"/>
+            <img className="headshot" src={headshot} alt="Jakub Vogel headshot"/>
             <div className="caption">{image_caption}</div>
             <div className="caption caption-main">
               <span>I like to</span>
@@ -57,8 +76,13 @@ function App() {
         </div>
 
         <div id="about">
-            <h2 className="about-header">About</h2>
-            <AboutContent paragraphs={about} />
+          <h2>About Me</h2>
+          <AboutContent paragraphs={about} />
+        </div>
+
+        <div id="projects">
+          <h2>My Projects</h2>
+          <Projects projects={projects} />
         </div>
 
         <div id="resume">
@@ -74,11 +98,11 @@ function App() {
           <br />
           <div className="line">Jakub Vogel</div>
           <div className="line">
-            <img className="email-icon" src={email} width="20" height="20" alt="Email" />
+            <img className="email-icon" src={email} width="20" height="20" alt="Email icon" />
             jakub.vogel@rutgers.edu
           </div>
           <div className="line">
-            <img className="phone-icon" src={phone} width="20" height="20" alt="Phone" />
+            <img className="phone-icon" src={phone} width="20" height="20" alt="Phone icon" />
             (908) 210-6270
           </div>
           <div className="icons">
