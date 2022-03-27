@@ -13,6 +13,7 @@ import liIcon from './media/linkedin.png';
 import githubIcon from './media/GitHub-32px.png';
 import email from './media/email.svg';
 import phone from './media/phone.svg';
+import bee from './media/bee.svg';
 
 function App() {
   const sections = ['Home', 'About', 'Projects', 'Resume', 'Contact'];
@@ -25,20 +26,10 @@ function App() {
                 ];
 
   const projects = [{
-      icon: headshot,
+      icon: bee,
       name: 'NYT Spelling Bee Solver',
-      link: 'www.google.com',
-      description: 'A solver for the NYT spelling bee.'
-    }, {
-      icon: githubIcon,
-      name: 'Test 2',
-      link: 'https://www.google.com',
-      description: 'Test description 2 that wraps around and is really long and just keeps going like a normal desce robably owuld and so this is more real'
-    }, {
-      icon: liIcon,
-      name: 'Test 3',
-      link: '',
-      description: 'Testing 3 things'
+      link: 'https://jakubgvogel.com/solve-spelling-bee/',
+      description: 'A solver for the NYT spelling bee. Built a React frontend for my existing Python + Flask logic solving backend hosted on Google Cloud Run. Input the letters for the spelling bee and find that missing word!'
     }
   ];
   
