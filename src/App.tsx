@@ -1,12 +1,12 @@
 import './App.css';
 
-import { TypingText } from './TypingText';
-import { ContactForm } from './ContactForm';
-import { MenuBar } from './MenuBar';
-import { ResumePreview } from './ResumePreview';
-import { AboutContent } from './AboutContent';
-import { Projects } from './Projects';
-import { ScrollToTopButton } from './ScrollToTopButton';
+import { TypingText } from './components/TypingText';
+import { ContactForm } from './components/ContactForm';
+import { MenuBar } from './components/MenuBar';
+import { ResumePreview } from './components/ResumePreview';
+import { AboutContent } from './components/AboutContent';
+import { Projects } from './components/Projects';
+import { ScrollToTopButton } from './components/ScrollToTopButton';
 
 import headshot from './media/cropped_headshot.jpg';
 import liIcon from './media/linkedin.png';
@@ -14,6 +14,7 @@ import githubIcon from './media/GitHub-32px.png';
 import email from './media/email.svg';
 import phone from './media/phone.svg';
 import bee from './media/bee.svg';
+import squares from './media/squares.svg';
 
 function App() {
   const sections = ['Home', 'About', 'Projects', 'Resume', 'Contact'];
@@ -29,7 +30,12 @@ function App() {
       icon: bee,
       name: 'NYT Spelling Bee Solver',
       link: 'https://jakubgvogel.com/solve-spelling-bee/',
-      description: 'A solver for the NYT spelling bee. Built a React frontend for my existing Python + Flask logic solving backend hosted on Google Cloud Run. Input the letters for the spelling bee and find that missing word!'
+      description: 'A solver for the NYT spelling bee. I built a React frontend for my existing Python + Flask logic solving backend hosted on Google Cloud Run. Input the letters for the spelling bee and find that missing word!'
+    }, {
+      icon: squares,
+      name: 'Wordle Helper',
+      link: 'https://jakubgvogel.com/wordle-helper/',
+      description: 'An app that helps you solve the Wordle. I built a React-only web application using the logic from my original wordle solver. Input the words you have guessed to see how many words are left and the best ones to choose!'
     }
   ];
   

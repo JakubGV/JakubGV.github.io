@@ -2,7 +2,7 @@ import { FunctionComponent, useEffect, useState } from 'react';
 import { animateScroll as scroll } from 'react-scroll';
 
 import './ScrollToTopButton.css';
-import upArrow from './media/up_arrow.svg';
+import upArrow from '../media/up_arrow.svg';
 
 type ScrollToTopButtonProps = {
   displacement: number
