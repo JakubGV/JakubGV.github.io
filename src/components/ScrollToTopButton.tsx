@@ -2,7 +2,7 @@ import { FunctionComponent, useEffect, useState } from 'react';
 import { animateScroll as scroll } from 'react-scroll';
 
 import './ScrollToTopButton.css';
-import upArrow from '../media/up_arrow.svg';
+import upArrow from '../media/arrow_up.svg';
 
 type ScrollToTopButtonProps = {
   displacement: number
@@ -29,7 +29,7 @@ export const ScrollToTopButton: FunctionComponent <ScrollToTopButtonProps>  = (p
 
   return (
     <div className="arrow-button" onClick={scroll.scrollToTop} currently-visible={showButton}>
-      <img className="arrow" src={upArrow} alt="Up arrow"/>
+      <img className="arrow" src={upArrow} width="35" height="35" alt="Up arrow"/>
     </div>
   )
 }

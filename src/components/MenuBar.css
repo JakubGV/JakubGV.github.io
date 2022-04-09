@@ -30,6 +30,7 @@
 
 .tab:hover {
   cursor: pointer;
+  background-color: #98c1d9ff;
 }
 
 @media screen and (min-width: 600px) {
