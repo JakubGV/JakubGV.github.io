@@ -22,11 +22,11 @@ export const MenuBar: FunctionComponent <MenuBarProps> = (props) => {
       </div>
       <div className="row-right">
         {
-          props.sections.map( (tabName: string) => {
+          props.sections.map( (tabName: string, index: number) => {
             const divLinkName = tabName.toLowerCase();
             
             return (
-              <div className="tab" key={divLinkName}>
+              <div className="tab" key={divLinkName} last-tab={index === props.sections.length - 1 ? "true" : "false"}>
                 <Link to={divLinkName} smooth={true}>
                   {tabName}
                 </Link>

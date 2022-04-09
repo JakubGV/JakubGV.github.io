@@ -1,12 +1,7 @@
 .menu-bar {
   display: flex;
   flex-direction: column;
-  height: 125px;
   background-color: rgb(238, 238, 238);
-  border-style: solid;
-  border-left: none;
-  border-right: none;
-  border-top: none;
 }
 
 .name-left {
@@ -15,6 +10,10 @@
 
 .name {
   text-align: center;
+  font-size: 26px;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-top: 5px;
 }
 
 .row-right {
@@ -24,7 +23,9 @@
 }
 
 .tab {
-  margin-bottom: 1em;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
 }
 
 .tab:hover {
@@ -34,7 +35,7 @@
 @media screen and (min-width: 600px) {
   .menu-bar {
     flex-direction: row;
-    height: 75px;
+    height: 55px;
   }
   
   .name-left {
@@ -42,10 +43,11 @@
     justify-content: flex-start;
     align-items: center;
     width: 50%;
+    margin-left: 40px;
   }
-  
+
   .name {
-    margin-left: 1em;
+    padding-top: 0;
   }
   
   .row-right {
@@ -55,7 +57,11 @@
   }
   
   .tab {
-    margin-right: 5%;
-    margin-bottom: 0em;
+    padding: 15px;
+    margin-bottom: 0;
+  }
+
+  .tab[last-tab="true"] {
+    margin-right: 25px;
   }
 }

@@ -24,7 +24,7 @@ export const Projects: FunctionComponent <ProjectsProps> = (props) => {
     {
       props.projects.map( (project: Project, index: number) => {
         return (
-          <div className="project">
+          <div className="project" key={project.name}>
             <img className="icon" src={project.icon} width="50" height="50" alt={project.name + ' icon'} />
             <h3><a href={project.link} target="_blank" rel="noreferrer">{project.name}</a></h3>
             <p className="p">{project.description}</p>
