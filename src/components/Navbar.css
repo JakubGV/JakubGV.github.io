@@ -1,0 +1,22 @@
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+header {
+  margin-right: auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  width: 40%;
+}
+
+.navlink {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.25em;
+  font-weight: 400;
+  text-transform: lowercase;
+}

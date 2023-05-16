@@ -1,4 +1,6 @@
-import './App.css';
+import './PersonalWebsite.css';
+
+import { Navbar } from './components/Navbar';
 
 import { TypingText } from './components/TypingText';
 import { ContactForm } from './components/ContactForm';
@@ -8,7 +10,7 @@ import { AboutContent } from './components/AboutContent';
 import { Projects } from './components/Projects';
 import { ScrollToTopButton } from './components/ScrollToTopButton';
 
-import headshot from './media/centered_cropped_headshot.webp';
+import headshot from './media/hard_light_headshot.jpg';
 import liIcon from './media/linkedin.png';
 import githubIcon from './media/GitHub-32px.png';
 import email from './media/email.svg';
@@ -16,10 +18,10 @@ import phone from './media/phone.svg';
 import bee from './media/bee.svg';
 import squares from './media/squares.svg';
 
-function App() {
-  const sections = ['About', 'Projects', 'Resume', 'Contact'];
-  const homeText = 'I\'m an aspiring software engineer. That means I like technology and writing code. But really, I have the opportunity to build and create solutions that can reach all types of people, all while learning new things every day.';
-  const rotatingWords = ['solve problems.', 'build solutions.', 'learn new things.'];
+function PersonalWebsite() {
+  const sections = ["About", "Projects", "Resume", "Contact"];
+  const heroText = "I'm an aspiring software engineer. That means I like technology and writing code. But really, I have the opportunity to build and create solutions that can reach all types of people, all while learning new things every day.";
+
   
   const about = ['Currently, I am a senior electrical and computer engineering student at Rutgers University as a member of the Honors College. On top of that, I am pursuing a minor in business administration to better integrate business and engineering principles to lead an engaging, challenging career.',
                  'As for this website, I can proudly say I built it from scratch. There is nothing but handmade HTML, CSS, JavaScript, and a little help from ReactJS. If you have any questions about how I made it or otherwise, don\'t hesitate to contact me below!',
@@ -56,8 +58,22 @@ function App() {
   const to_top_displacement = 300;
   
   return (
-    <>
-      <div className="home-page">
+    <div className="grid-container">
+      <div className="grid-item-navbar">
+        <Navbar header="Jakub Vogel" sections={sections}/>
+      </div>
+
+      <div className="hero-text">
+        <h1>Jakub Vogel</h1>
+        <p>{heroText}</p>
+      </div>
+      <div className="hero-image">
+        <img src={headshot} alt="Head shot of Jakub Vogel"/>
+      </div>
+    </div>
+      
+    /*
+      <div className="content-grid">
         <MenuBar header="Jakub Vogel" sections={sections}/>
 
         <div className="pages">
@@ -121,7 +137,8 @@ function App() {
       
       <ScrollToTopButton displacement={to_top_displacement} />
     </>
+    */
   );
 }
 
-export default App;
+export default PersonalWebsite;
