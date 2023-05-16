@@ -143,24 +143,24 @@ export class ContactForm extends Component <ContactFormProps, ContactFormState> 
   
   render() {
     return (
-      <>
+      <div className="contact-form">
         <input
           className="text-input"
-          placeholder="Name..."
+          placeholder="Name"
           name="name" type="text"
           value={this.state.form.name}
           onChange={this.handleTextChange} />
 
         <input
           className="text-input"
-          placeholder="Email..."
+          placeholder="Email"
           name="email" type="text"
           value={this.state.form.email}
           onChange={this.handleTextChange} />
 
         <textarea
           className="box-input"
-          placeholder="Message..."
+          placeholder="Message"
           name="message"
           value={this.state.form.message}
           onChange={this.handleTextAreaChange} />
@@ -178,13 +178,13 @@ export class ContactForm extends Component <ContactFormProps, ContactFormState> 
             !this.state.valid.messageValid &&
             <div className="error">Please enter a message</div>
           }
-          <button onClick={this.handleSubmit}>Send!</button>
+          <button className="submit-button" onClick={this.handleSubmit}><h2 className="subheader">Send</h2></button>
           {
             this.state.loading &&
             <Circles height="25" width="25" color="#98c1d9ff"/>
           }
         </div>
-      </>
+      </div>
     )
   }
 }
