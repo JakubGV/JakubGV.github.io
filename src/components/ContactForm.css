@@ -1,5 +1,5 @@
 .contact-form {
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,7 +23,7 @@ input::placeholder, textarea::placeholder {
 .text-input, .box-input {
   font-family: inherit;
   font-size: inherit;
-  width: 75%;
+  width: 100%;
   box-sizing: border-box;
   padding: .25em;
   margin-bottom: 1em;
@@ -78,4 +78,12 @@ textarea {
 .error {
   color: red;
   margin-bottom: 0.5em;
+}
+
+@media screen and (max-width: 750px) {
+  .contact-form {
+    padding-left: 25px;
+    padding-right: 25px;
+    box-sizing: border-box;
+  }
 }

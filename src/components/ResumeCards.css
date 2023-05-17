@@ -12,7 +12,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 525px;
+  min-width: 325px;
+  max-width: 525px;
+  width: 75vw;
   background-color: #7395AE;
   border-radius: 15px;
   justify-content: flex-start;

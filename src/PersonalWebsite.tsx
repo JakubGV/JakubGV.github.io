@@ -30,7 +30,7 @@ function PersonalWebsite() {
 
   const projects = [{
       icon: bee,
-      name: 'NYT Spelling Bee Solver',
+      name: 'Spelling Bee Solver',
       link: 'https://jakubgvogel.com/solve-spelling-bee/',
       description: 'A solver for the NYT spelling bee. I built a React frontend for my existing Python + Flask logic solving backend hosted on Google Cloud Run. Input the letters for the spelling bee and find that missing word!'
     }, {
@@ -70,16 +70,16 @@ function PersonalWebsite() {
           <p>{heroText}</p>
         </div>
         <div className="hero-image">
-          <img src={headshot} alt="Head shot of Jakub Vogel"/>
+          <img className="headshot" src={headshot} alt="Head shot of Jakub Vogel"/>
         </div>
 
         <div className="about-icons">
-          <img src={htmlIcon} width="100" alt="HTML icon"/>
-          <img src={cssIcon} width="100" alt="CSS icon"/>
-          <img src={jsIcon} width="100" alt="JavaScript icon"/>
-          <img src={reactIcon} width="100" alt="React icon"/>
-          <img src={pythonIcon} width="100" alt="Python icon"/>
-          <img src={sqlIcon} width="100" alt="SQL icon"/>
+          <img className="skill-icon" src={htmlIcon} alt="HTML icon"/>
+          <img className="skill-icon" src={cssIcon} alt="CSS icon"/>
+          <img className="skill-icon" src={jsIcon} alt="JavaScript icon"/>
+          <img className="skill-icon" src={reactIcon} alt="React icon"/>
+          <img className="skill-icon" src={pythonIcon} alt="Python icon"/>
+          <img className="skill-icon" src={sqlIcon} alt="SQL icon"/>
         </div>
         <div className="about-text about">
           <h1>About Me</h1>
