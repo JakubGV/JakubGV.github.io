@@ -1,4 +1,4 @@
-.navbar {
+nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -8,10 +8,15 @@ header {
   margin-right: auto;
 }
 
-nav {
+.links {
+  width: 50%;
+}
+
+.links ul {
   display: flex;
   justify-content: space-evenly;
-  width: 50%;
+  padding-left: 0px;
+  margin: 0px;
 }
 
 .navlink {
@@ -19,6 +24,7 @@ nav {
   font-size: 1.25em;
   font-weight: 400;
   text-transform: lowercase;
+  list-style-type: none;
 }
 
 .navlink:hover {
@@ -26,7 +32,7 @@ nav {
 }
 
 @media screen and (max-width: 750px) {
-  .navbar {
+  nav {
     flex-direction: column;
     width: 100vw;
   }
@@ -35,7 +41,7 @@ nav {
     margin-right: 0px;
   }
 
-  nav {
+  .links {
     width: 100vw;
   }
 }

@@ -81,7 +81,7 @@ function PersonalWebsite() {
           <img className="skill-icon" src={pythonIcon} alt="Python icon"/>
           <img className="skill-icon" src={sqlIcon} alt="SQL icon"/>
         </div>
-        <div className="about-text about">
+        <div className="about-text about" id="about">
           <h1>About Me</h1>
           {
             about.map( (paragraph, index) => {
@@ -90,12 +90,12 @@ function PersonalWebsite() {
           }
         </div>
 
-        <section className="projects">
+        <section className="projects" id="projects">
           <h1>Projects</h1>
           <ProjectCards projects={projects}/>
         </section>
 
-        <section className="resume">
+        <section className="resume" id="resume">
           <h1>Resume Highlights</h1>
           <ResumeCards highlights={resumeHighlights}/>
           <div className="link">
@@ -105,7 +105,7 @@ function PersonalWebsite() {
           </div>
         </section>
 
-        <section className="contact">
+        <section className="contact" id="contact">
           <h1>Reach Out!</h1>
           <ContactForm />
         </section>

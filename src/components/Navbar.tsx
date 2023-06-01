@@ -1,5 +1,4 @@
 import { FunctionComponent } from 'react';
-import { Link } from 'react-scroll';
 import './Navbar.css';
 
 type NavbarProps = {
@@ -16,25 +15,23 @@ type NavbarProps = {
  */
 export const Navbar: FunctionComponent <NavbarProps> = (props) => {
   return (
-    <div className="navbar">
+    <nav>
       <header>
-        <h2 className="subheader">{props.header}</h2>
+        <h2 className="subheader"><a href="/">{props.header}</a></h2>
       </header>
-      <nav>
-      {
-        props.sections.map( (tabName: string, index: number) => {
-          const divLinkName = tabName.toLowerCase();
-          
-          return (
-            <div className="navlink" key={divLinkName} last-tab={index === props.sections.length - 1 ? "true" : "false"}>
-              <Link to={divLinkName} smooth={true}>
-                {tabName}
-              </Link>
-            </div>
-          )
-        })
-      }
-      </nav>
-    </div>
+      <div className="links">
+        <ul>
+        {
+          props.sections.map( (tabName: string) => {
+            return (
+                <li className="navlink" key={tabName}>
+                  <a href={"#" + tabName.toLowerCase()}>{tabName}</a>
+                </li>
+            )
+          })
+        }
+        </ul>
+      </div>
+    </nav>
   )
 }
